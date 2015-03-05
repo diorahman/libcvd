@@ -238,11 +238,11 @@ noopt_CXXFLAGS="$CXXFLAGS"
 CXXFLAGS=
 
 AC_ARG_WITH(optimize,   [  --without-optimize      compile without optimizations ],[optimize=no],[])
-AC_ARG_WITH(optimize,   [  --with-optimize=flags   compile with optimization flags],[optimize="$withval"], [optimize=-O3])
+AC_ARG_WITH(optimize,   [  --with-optimize=flags   compile with optimization flags],[optimize="$withval"], [optimize=-O1])
 
 if test "$optimize" != no
 then
-	TEST_AND_SET_CXXFLAG(-O3)
+	TEST_AND_SET_CXXFLAG(-O1)
 	if test $ts_success == no
 	then
 		AC_MSG_WARN([I do not know how to switch on optimizing for this compiler])

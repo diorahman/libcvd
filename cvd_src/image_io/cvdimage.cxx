@@ -22,7 +22,7 @@
 #else
 	#include <stdint.h>
 
-	#ifdef __GNUC__
+	#if defined(GNUC) && ! defined(LIBCPP_VERSION)
 		#include <tr1/array>
 		using namespace std::tr1;
 	#else

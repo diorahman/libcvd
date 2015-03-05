@@ -1,5 +1,5 @@
 
-#ifdef __GNUC__
+#if defined(GNUC) && ! defined(LIBCPP_VERSION)
 #warning This file is oddly named and now deprecated. Use cvd/image_io.h
 #else //elif defined(which ever compilers support this)
 #pragma warning "This file is oddly named and now deprecated. Use cvd/image_io.h"

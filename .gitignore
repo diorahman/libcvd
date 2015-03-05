@@ -22,3 +22,4 @@ examples/colourmaps
 html/
 man/
 tests/*.out
+*.dylib

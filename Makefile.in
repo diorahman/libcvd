@@ -373,7 +373,7 @@ REGRESSION_OUT=$(patsubst %,tests/%.out, $(REGRESSIONS))
 test:$(REGRESSION_OUT)
 
 tests/%.test: tests/%.cc
-	$(CXX) -I. $(CPPFLAGS) $(CXXFLAGS) $< -o $@ -O3 -L. -lcvd
+	$(CXX) -I. $(CPPFLAGS) $(CXXFLAGS) $< -o $@ -O1 -L. -lcvd
 
 tests/%.out: tests/%.test
 	./$<  && touch $@
@@ -388,7 +388,7 @@ EXAMPLE_PROGS=$(patsubst %,examples/%, $(EXAMPLES))
 examples:$(EXAMPLE_PROGS)
 
 $(EXAMPLE_PROGS): % : %.cc
-	$(CXX) -I. $(CPPFLAGS) $(CXXFLAGS) $< -o $@ -O3 -L. -lcvd
+	$(CXX) -I. $(CPPFLAGS) $(CXXFLAGS) $< -o $@ -O1 -L. -lcvd
 
 
 clean:

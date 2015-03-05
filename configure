@@ -3203,7 +3203,7 @@ else
 int
 main ()
 {
-#ifndef __GNUC__
+#if defined(GNUC) && ! defined(LIBCPP_VERSION)
        choke me
 #endif
 
@@ -3974,7 +3974,7 @@ else
 int
 main ()
 {
-#ifndef __GNUC__
+#if defined(GNUC) && ! defined(LIBCPP_VERSION)
        choke me
 #endif
 
@@ -4888,7 +4888,7 @@ fi
 if test "${with_optimize+set}" = set; then :
   withval=$with_optimize; optimize="$withval"
 else
-  optimize=-O3
+  optimize=-O1
 fi
 
 
@@ -4897,14 +4897,14 @@ then
 
 	if test "" == ""
 	then
-		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler flag -O3 works" >&5
-$as_echo_n "checking if compiler flag -O3 works... " >&6; }
+		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler flag -O1 works" >&5
+$as_echo_n "checking if compiler flag -O1 works... " >&6; }
 	else
 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking " >&5
 $as_echo_n "checking ... " >&6; }
 	fi
 	save_CXXFLAGS="$CXXFLAGS"
-	CXXFLAGS="$CXXFLAGS -O3"
+	CXXFLAGS="$CXXFLAGS -O1"
 
 
 
